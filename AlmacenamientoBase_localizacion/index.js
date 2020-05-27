@@ -44,3 +44,38 @@ button.addEventListener('click', function() {
   marker = new google.maps.Marker(markerOpts)
 
 })
+
+
+var Agenda = {
+  init: function(){
+    this.listenMapClick()
+    this.sitiosGuardados = []
+    sessionStorage.setItem('sitios',JSON.stringify(this.sitiosGuardados))
+  },
+  listenMapClick: function(){
+    var self = this
+    google.maps.event.addEventListener(map,'click',function(ev){
+      var position = ev.latLng
+      var modalInfo = document.getElementsByClassName('modalInfo')[0].click()
+      var btnGuardar= document.getElementsByClassName('guardaInfo')[0]
+      btnGuardar.onclick= function(e){
+        e.preventDefault()
+        var nombre = document.getElementsByClassName('nombre')[0]
+        var site ={
+          nombre:nombre,value
+          descripcion: descripcion.value,
+          latitud: position.lat(),
+          longitud: position.lng(
+        }
+        self.saveAndPlaceMarker(site)
+        nombre.value= ''
+        descripcion.value = ''
+        $('modalCaptura').closeModal()
+      }
+    })
+  },
+
+
+
+  
+}
