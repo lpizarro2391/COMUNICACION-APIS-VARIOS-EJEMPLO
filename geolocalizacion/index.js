@@ -21,3 +21,13 @@ function initMap(){
    map = new google.maps.Map(mapContainer,config)
    infoWindow = new google.maps.InfoWindow({map: map})
 }
+
+var button = document.getElementById("btn-geo")
+
+button.addEventListener("click",function(){
+    alert('se buscara´ ubicacion en el mapa')
+    map.setCenter(pos)
+    map.setZoom(15)
+    infoWindow.setPosition(pos)
+    infoWindow.setContent('Ubicacion encontrada')
+})
