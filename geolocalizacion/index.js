@@ -18,6 +18,6 @@ function initMap(){
        center:{lat:-34.37,long:150.644 },
        zoom: 5
    }
-   map = new google.com.maps.Map(mapContainer,config)
-   infoWindow = new google.maps.infoWindow({map: map})
+   map = new google.maps.Map(mapContainer,config)
+   infoWindow = new google.maps.InfoWindow({map: map})
 }
