@@ -46,3 +46,9 @@ var Estructura= {
 
 var persona1 = Estructura.Personas[0];
 var persona2 = Estructura.Personas[1];
+
+var Telefono1 = persona1.Telefono;
+var Telefono2 = persona2.Telefono;
+
+var estudiosPersona1 = persona1.Estudios[1];
+var estudiosPersona2 = persona1.Estudios[1];
