@@ -4,7 +4,7 @@ if(navigator.geolocation){
     navigator.geolocation.getCurrentPosition(function(position){
         pos = {
             lat: position.coords.latitude,
-            long: position.coords.longitude
+            lng: position.coords.longitude
         }
         initMap()
     })
@@ -15,7 +15,7 @@ if(navigator.geolocation){
 function initMap(){
    var mapContainer = document.getElementById('map')
    var config = {
-       center:{lat:-34.37,long:150.644 },
+       center:{lat:-34.37,lng:150.644 },
        zoom: 5
    }
    map = new google.maps.Map(mapContainer,config)
