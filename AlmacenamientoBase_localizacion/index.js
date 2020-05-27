@@ -28,7 +28,7 @@ function initMap() {
   }
   map = new google.maps.Map(mapContainer, config)
   infoWindow = new google.maps.InfoWindow({ map: map })
-
+  Agenda.init()
 }
 
 var button = document.getElementById('btn-geo')
@@ -82,6 +82,20 @@ saveAndPlaceMarker: function(site){
   this.renderSite(site)
 },
 
+renderSite: function(site){
+  var htmlInfo = '<li class="collection-item avatar">'+
+  '<i class = "material-icons cicle blue">thumb_up</i>'+
+  '<span class="title"> : nombre: </span>'+
+  '<p> Latitud: : latitud: <br> longitud: :longitud: <br> Descripcion: : descripcion:</p>'+
+  '<a href="#!" class="secondary-content"> <i class="material-icons">grade</i></a>'+
+  '</li>';  
+  
+
+
+
+
+
+}
 
 
 
