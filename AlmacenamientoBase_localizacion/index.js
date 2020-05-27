@@ -61,7 +61,8 @@ var Agenda = {
       btnGuardar.onclick= function(e){
         e.preventDefault()
         var nombre = document.getElementsByClassName('nombre')[0]
-        var site ={
+          descripcion = document.getElementsByClassName('descripcion')[0]
+        var site = {
           nombre:nombre,value
           descripcion: descripcion.value,
           latitud: position.lat(),
@@ -70,12 +71,18 @@ var Agenda = {
         self.saveAndPlaceMarker(site)
         nombre.value= ''
         descripcion.value = ''
-        $('modalCaptura').closeModal()
+        $('#modalCaptura').closeModal()
       }
     })
   },
+saveAndPlaceMarker: function(site){
+  this.sitiosGuardados = JSON.parse(sessionStorage.getItem('sitios'))
+  this.sitiosGuardados.push(site)
+  sessionStorage.setItem('sitios',JSON.stringify(this.sitiosGuardados))
+  this.renderSite(site)
+},
 
 
 
-  
+
 }
