@@ -11,7 +11,7 @@ var map, infoWindow, pos, marker
 if ( navigator.geolocation ) {
   navigator.geolocation.getCurrentPosition(function (position) {
     pos = {
-      lat: position.coords.latitude,
+      lat: position.coords.latitud,
       lng: position.coords.longitude
     }
     initMap()
@@ -88,13 +88,23 @@ renderSite: function(site){
   '<span class="title"> : nombre: </span>'+
   '<p> Latitud: : latitud: <br> longitud: :longitud: <br> Descripcion: : descripcion:</p>'+
   '<a href="#!" class="secondary-content"> <i class="material-icons">grade</i></a>'+
-  '</li>';  
+  '</li>'; 
   
-
-
-
-
-
+  var newSite = htmlInfo
+  var result = newSite.replace(':nombre',site.nombre)
+                      .replace(':nombre', site.latitud)
+                      .replace(':nombre', site.longitud)
+                      .replace(':nombre', site.descripcion)
+  var allSites = document.getElementsByClassName('guardados')[0]
+  var markerOpts= {
+    position: {
+      lat: site.latitud,
+      lng: site.longitud
+    },
+    map: map
+  }
+  var newMarker = new google.maps.Marker(markerOpts)
+  allSites.innerHTML = allSites.innerHTML + result
 }
 
 
