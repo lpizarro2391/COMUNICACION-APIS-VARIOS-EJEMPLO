@@ -91,10 +91,10 @@ renderSite: function(site){
   '</li>'; 
   
   var newSite = htmlInfo
-  var result = newSite.replace(':nombre',site.nombre)
-                      .replace(':latitud', site.latitud)
-                      .replace(':longitud', site.longitud)
-                      .replace(':descripcion', site.descripcion)
+  var result = newSite.replace(':nombre:',site.nombre)
+                      .replace(':latitud:', site.latitud)
+                      .replace(':longitud:', site.longitud)
+                      .replace(':descripcion:', site.descripcion)
   var allSites = document.getElementsByClassName('guardados')[0]
   var markerOpts= {
     position: {
