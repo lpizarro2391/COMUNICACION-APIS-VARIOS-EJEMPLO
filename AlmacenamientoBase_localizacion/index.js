@@ -86,18 +86,19 @@ renderSite: function(site){
   var worker = new Worker('doHTML.js')
   worker.postMessage(site)
   worker.addEventListener('message',function(e){
-    
+    var allSites = document.getElementsByClassName('guardados')[0]
+    var markerOpts = {
+      position: {
+        lat: site.latitud,
+        lng: site.longitud
+      },
+      map: map
+    }
+    var newMarker = new google.maps.Marker(markerOpts)
+    allSites.innerHTML = allSites.innerHTML + result
+    worker.terminate()
   })
-  var allSites = document.getElementsByClassName('guardados')[0]
-  var markerOpts= {
-    position: {
-      lat: site.latitud,
-      lng: site.longitud
-    },
-    map: map
-  }
-  var newMarker = new google.maps.Marker(markerOpts)
-  allSites.innerHTML = allSites.innerHTML + result
+  
 }
 
 
