@@ -83,7 +83,7 @@ saveAndPlaceMarker: function(site){
 },
 
 renderSite: function(site){
-  var worker = new Worker('doHTML.js')
+  var worker = new Worker('doHtml.js')
   worker.postMessage(site)
   worker.addEventListener('message',function(e){
     var result = e.data
