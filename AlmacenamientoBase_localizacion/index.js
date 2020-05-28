@@ -11,7 +11,7 @@ var map, infoWindow, pos, marker
 if ( navigator.geolocation ) {
   navigator.geolocation.getCurrentPosition(function (position) {
     pos = {
-      lat: position.coords.latitud,
+      lat: position.coords.latitude,
       lng: position.coords.longitude
     }
     initMap()
