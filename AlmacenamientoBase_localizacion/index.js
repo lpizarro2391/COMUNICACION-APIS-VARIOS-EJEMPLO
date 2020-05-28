@@ -100,6 +100,16 @@ renderSite: function(site){
     worker.terminate()
   })
   
+},
+loadSites: function(){
+  if(localStorage.sitios){
+
+    var sitios = JSON.parse(localStorage.getItem('sitios'))
+    var self = this
+    sitios.map(function(site){
+      self.renderSite(site)
+    })
+  }
 }
 
 
