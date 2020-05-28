@@ -54,7 +54,7 @@ var Agenda = {
   },
   listenMapClick: function(){
     var self = this
-    google.maps.event.addEventListener(map,'click',function(ev){
+    google.maps.event.addListener(map,'click',function(ev){
       var position = ev.latLng
       var modalInfo = document.getElementsByClassName('modalInfo')[0].click()
       var btnGuardar= document.getElementsByClassName('guardaInfo')[0]
@@ -63,10 +63,10 @@ var Agenda = {
         var nombre = document.getElementsByClassName('nombre')[0]
           descripcion = document.getElementsByClassName('descripcion')[0]
         var site = {
-          nombre:nombre,value
+          nombre:nombre,value,
           descripcion: descripcion.value,
           latitud: position.lat(),
-          longitud: position.lng(
+          longitud: position.lng()
         }
         self.saveAndPlaceMarker(site)
         nombre.value= ''
