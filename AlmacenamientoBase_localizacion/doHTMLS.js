@@ -9,8 +9,8 @@ self.addEventListener("message",function(e){
 
     var newSite = htmlInfo
     var result = newSite.replace(':nombre:', site.nombre)
-        .replace(':latitud:', site.latitud)
-        .replace(':longitud:', site.longitud)
-        .replace(':descripcion:', site.descripcion)
+                        .replace(':latitud:', site.latitud)
+                        .replace(':longitud:', site.longitud)
+                        .replace(':descripcion:', site.descripcion)
     self.postMessage(result)
 })
