@@ -63,7 +63,7 @@ var Agenda = {
         var nombre = document.getElementsByClassName('nombre')[0]
           descripcion = document.getElementsByClassName('descripcion')[0]
         var site = {
-          nombre:nombre,value,
+          nombre:nombre.value,
           descripcion: descripcion.value,
           latitud: position.lat(),
           longitud: position.lng()
