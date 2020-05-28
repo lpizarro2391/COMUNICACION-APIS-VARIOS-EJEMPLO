@@ -83,7 +83,11 @@ saveAndPlaceMarker: function(site){
 },
 
 renderSite: function(site){
-  
+  var worker = new Worker('doHTML.js')
+  worker.postMessage(site)
+  worker.addEventListener('message',function(e){
+    
+  })
   var allSites = document.getElementsByClassName('guardados')[0]
   var markerOpts= {
     position: {
